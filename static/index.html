@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Expression Converter</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mathematical Expression Converter</h1>
+            <p>Draw a mathematical expression and convert it to LaTeX</p>
+        </header>
+
+        <div class="main-content">
+            <div class="toolbar">
+                <div class="tool-group">
+                    <button id="pencil" class="tool-btn active" title="Pencil">
+                        ✏️ Pencil
+                    </button>
+                    <button id="eraser" class="tool-btn" title="Eraser">
+                        🧽 Eraser
+                    </button>
+                </div>
+                
+                <div class="tool-group">
+                    <label for="brushSize">Brush Size:</label>
+                    <input type="range" id="brushSize" min="1" max="20" value="5">
+                    <span id="brushSizeValue">5</span>
+                </div>
+                
+                <div class="tool-group">
+                    <button id="clear" class="action-btn" title="Clear Canvas">
+                        🗑️ Clear
+                    </button>
+                    <button id="undo" class="action-btn" title="Undo">
+                        ↩️ Undo
+                    </button>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="whiteboard" width="800" height="400"></canvas>
+                <div class="canvas-overlay">
+                    <div class="drawing-hint">
+                        Draw your mathematical expression here
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="convert" class="convert-btn">
+                    🚀 Convert to LaTeX
+                </button>
+                <button id="stop" class="stop-btn" style="display: none;">
+                    ⏹️ Stop Conversion
+                </button>
+            </div>
+
+            <div class="results">
+                <div class="result-field">
+                    <label for="latexOutput">LaTeX Output:</label>
+                    <textarea id="latexOutput" readonly placeholder="Your converted expression will appear here..."></textarea>
+                    <button id="copyLatex" class="copy-btn">📋 Copy</button>
+                </div>
+                
+                <div class="result-field">
+                    <label for="processingInfo">Processing Info:</label>
+                    <div id="processingInfo" class="info-box">
+                        Ready to convert
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
